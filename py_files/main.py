@@ -1,9 +1,11 @@
 import sys
+import os
 
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QPixmap
 # Importing PyQt6 libraries
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QMainWindow, QApplication, QInputDialog, QMessageBox
+from PyQt6.QtCore import Qt
 
 # Importing UI classes
 from QAddHouse import AddHouseWidget
@@ -19,12 +21,21 @@ from QSearchHouse import SearchHouseWidget
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        # Initialize the application
-        self.app = QApplication(sys.argv)
-
         super().__init__()
-        self.window = loadUi("QMenuHouse.ui", self)
+        ui_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ui_files", "QMenuHouse.ui")
+        self.window = loadUi(ui_file, self)
 
+        # Set window icon
+        icon_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "images", "icon.png")
+        self.setWindowIcon(QIcon(icon_path))
+
+        # Set background image
+        logo_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "images", "Logo.png")
+        pixmap = QPixmap(logo_path)
+        if not pixmap.isNull():
+            scaled_pixmap = pixmap.scaled(400, 400, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            self.centralWidget().setStyleSheet(f"background-image: url({logo_path}); background-position: center; background-repeat: no-repeat;")
+        
         self.setFixedSize(400, 400)
         # Instantiating UI objects
         self.addHouse = AddHouseWidget()
@@ -79,7 +90,8 @@ class MainWindow(QMainWindow):
         msgBox = QMessageBox()
         msgBox.setWindowTitle("About")
         msgBox.setText("Team members:\n\nEdgardo Reyes")
-        msgBox.setWindowIcon(QIcon("icon.png"))
+        icon_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "images", "icon.png")
+        msgBox.setWindowIcon(QIcon(icon_path))
         msgBox.exec()
 
     # Message for Help -> Help Contents
@@ -88,19 +100,16 @@ class MainWindow(QMainWindow):
         msgBox.setWindowTitle("Help")
         msgBox.setText(
             "File -> Add a House: To add a house to the database\n\nFile -> Modify a House: To modify a house\n\nFile -> Search for a House: To view a specific house\n\nFile -> Report: To view all houses: \n\nFile -> Exit: To exit")
-        msgBox.setWindowIcon(QIcon("icon.png"))
+        icon_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "images", "icon.png")
+        msgBox.setWindowIcon(QIcon(icon_path))
         msgBox.exec()
 
-    # Display the window app
-    def run(self):
-        sys.exit(self.app.exec())
-
-
-# Instantiate the class MainWindow()
+    # Instantiate the class MainWindow()
 # and execute this app
 def main():
-    app = MainWindow()
-    app.run()
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    sys.exit(app.exec())
 
 
 if __name__ == '__main__':

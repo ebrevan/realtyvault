@@ -14,14 +14,13 @@ class DBConnection:
         self.cursor = None
 
         try:
-
             #Connects to the RealStateDB database in mySQL
-
             self.db = pymysql.connect(
                 host="localhost",
                 user="root",
-                password="Elloco77!",
-                database="RealStateDB"
+                password="NewPassword123!",
+                database="RealStateDB",
+                autocommit=True
             )
 
             # All queries used
@@ -31,8 +30,18 @@ class DBConnection:
             self.update_query = "UPDATE realstate set address1=%s, address2=%s, city=%s, state=%s, postalcode=%s, country=%s, photo=%s, house_size=%s, registerDate=%s where houseID=%s"
 
             self.cursor = self.db.cursor()
+            
+            # Test the connection with a simple query
+            self.cursor.execute("SELECT 1")
+            
         except Exception as ex:
-            print(ex)
+            print(f"Database connection error: {str(ex)}")
+            print("Please check that:")
+            print("1. MySQL server is running")
+            print("2. The password is correct")
+            print("3. The database 'RealStateDB' exists")
+            print("4. The user 'root' has proper permissions")
+            raise
 
     # Method to add a new house
     def add(self, house):

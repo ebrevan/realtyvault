@@ -1,4 +1,5 @@
 # Importing PyQt6 libraries
+import os
 from PyQt6.uic import loadUi
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
@@ -11,7 +12,8 @@ from DBConnection import DBConnection
 class ReportWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("QReport.ui", self)
+        ui_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ui_files", "QReport.ui")
+        loadUi(ui_file, self)
         self.update_report()
 
 

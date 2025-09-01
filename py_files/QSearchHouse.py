@@ -1,4 +1,5 @@
 # Importing PyQt6 libraries
+import os
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 from PyQt6.uic import loadUi
@@ -12,7 +13,8 @@ from DBConnection import DBConnection
 class SearchHouseWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("QSearchHouse.ui", self)
+        ui_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ui_files", "QSearchHouse.ui")
+        loadUi(ui_file, self)
 
     # Method to fill the fields with the information of the selected house
     def fill_the_fields(self, id):

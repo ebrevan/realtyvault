@@ -22,7 +22,8 @@ from House import House
 class AddHouseWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("QAddHouse.ui", self)
+        ui_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ui_files", "QAddHouse.ui")
+        loadUi(ui_file, self)
         self.date_lineEdit.setText(str(date.today())) # Automatically sets the register date to today's date
         self.current_image_path = None # Instantiates the file path variable of the house image
 

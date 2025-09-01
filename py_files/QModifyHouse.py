@@ -18,7 +18,8 @@ from House import House
 class ModifyHouseWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("QModifyHouse.ui", self)
+        ui_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ui_files", "QModifyHouse.ui")
+        loadUi(ui_file, self)
 
         self.id = -1
         self.current_image_path = None
