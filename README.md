@@ -1,6 +1,6 @@
-"# RealtyVault 🏠
+# RealtyVault 🏠
 
-RealtyVault is a desktop application built with Python and PyQt6 that helps manage real estate property information. This project demonstrates my skills in desktop application development, database management, and user interface design.
+RealtyVault is a desktop application built with Python and PyQt6 that helps manage real estate property information. This project demonstrates my skills in desktop application development, database management, and user interface design. This was done as part of a project for my Advanced Programming course.
 
 ![Main Window](screenshots/main_window.png)
 
@@ -19,6 +19,7 @@ Add new properties to the database with detailed information, including property
 
 #### Modify Properties
 Update existing property information seamlessly:
+
 ![Modify House](screenshots/modify_house_1.png) ![Modify Details](screenshots/modify_house_2.png)
 
 #### Search Properties
