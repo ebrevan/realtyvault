@@ -132,7 +132,6 @@ I'm a Computer Engineering student passionate about software development and loo
 
 - LinkedIn: [Here](https://www.linkedin.com/in/ebrevan/)
 - Email: ebrevan@outlook.com
-- GitHub: [@ebrevan](https://github.com/ebrevan)
 
 ## 📄 License
 
