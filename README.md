@@ -133,6 +133,3 @@ I'm a Computer Engineering student passionate about software development and loo
 - LinkedIn: [Here](https://www.linkedin.com/in/ebrevan/)
 - Email: ebrevan@outlook.com
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details." 
