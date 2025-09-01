@@ -18,10 +18,6 @@ CREATE TABLE realstate
    registerDate date
 );
 
--- Insert or create a new house
-INSERT INTO RealStateDB.realstate (houseID, address1, address2, city, state, postalcode, country, photo, house_size, registerDate) 
-     VALUES (null, '567 calle Quito', 'suite 439', 'San Juan', 'PR', '00921', 'USA', 'myhome.jpg', 100, '2000-10-31');
-
 -- Select all houses from DB
 SELECT * FROM RealStateDB.realstate;	
 
