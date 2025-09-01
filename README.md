@@ -130,6 +130,6 @@ I'm a Computer Engineering student passionate about software development and loo
 
 ## 📬 Contact
 
-- LinkedIn: [Here](https://www.linkedin.com/in/ebrevan/)
+- LinkedIn: [here](https://www.linkedin.com/in/ebrevan/)
 - Email: ebrevan@outlook.com
 
