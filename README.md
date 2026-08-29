@@ -40,8 +40,6 @@ View and analyze all properties in the database:
 - **Python**: Core programming language
 - **PyQt6**: GUI framework
 - **MySQL**: Database management
-- **SQL**: Database queries and management
-- **Object-Oriented Programming**: Modular and maintainable code structure
 
 ## 💻 Technical Implementation
 
@@ -119,17 +117,8 @@ realtyvault/
 └── README.md         # Project documentation
 ```
 
-## 👨‍💻 About Me
-
-I'm a Computer Engineering student passionate about software development and looking for internship opportunities. This project showcases my ability to:
-- Build full-featured desktop applications
-- Work with databases and GUI frameworks
-- Write clean, maintainable code
-- Implement proper software architecture
-- Create comprehensive documentation
-
 ## 📬 Contact
 
 - LinkedIn: [here](https://www.linkedin.com/in/ebrevan/)
-- Email: ebrevan@outlook.com
+- Email: edgrey2005@gmail.com
 
